@@ -11,4 +11,4 @@ lab.experiment("test greetings", () => {
     Code.expect(Hello("Homer")).to.equal("Hello, Homer!");
   });
 });
-//test 1
+//test
