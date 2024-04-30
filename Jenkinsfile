@@ -2,24 +2,12 @@
 
 pipeline {
 
-    agent {
-        docker {
-            image 'node'
-            args '-u root'
-        }
-    }
-
+    agent any
     stages {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'npm install'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing...'
-                sh 'npm test'
+                sh 'docker build -t mateobv07/github-pipeline:latest .'
             }
         }
     }
